@@ -1,0 +1,103 @@
+{
+    "punto1": {
+        "w": [
+            0.3333333333333333,
+            1.0,
+            -3.0,
+            -2.0,
+            1.25
+        ],
+        "b": 0.6666666666666666,
+        "etiqueta_positiva": 1,
+        "etiqueta_negativa": -1,
+        "umbral_decision": 0.0,
+        "columnas_features": null,
+        "features_grafica_2d": null
+    },
+    "punto2": {
+        "clases": [
+            {
+                "etiqueta": 1,
+                "nombre": "Clase 1",
+                "mu": [
+                    0.0,
+                    0.0
+                ],
+                "sigma": [
+                    [
+                        1.0,
+                        0.5
+                    ],
+                    [
+                        0.5,
+                        1.0
+                    ]
+                ],
+                "prior": 0.3333333333333333
+            },
+            {
+                "etiqueta": 2,
+                "nombre": "Clase 2",
+                "mu": [
+                    4.0,
+                    4.0
+                ],
+                "sigma": [
+                    [
+                        1.0,
+                        -0.3
+                    ],
+                    [
+                        -0.3,
+                        1.0
+                    ]
+                ],
+                "prior": 0.3333333333333333
+            },
+            {
+                "etiqueta": 3,
+                "nombre": "Clase 3",
+                "mu": [
+                    -4.0,
+                    3.0
+                ],
+                "sigma": [
+                    [
+                        0.5,
+                        0.0
+                    ],
+                    [
+                        0.0,
+                        2.0
+                    ]
+                ],
+                "prior": 0.3333333333333333
+            }
+        ],
+        "columnas_features": null,
+        "resolucion_grid": 350,
+        "rango_x": null,
+        "rango_y": null
+    },
+    "punto3": {
+        "k_vecinos": 2,
+        "metrica": "euclidea",
+        "columnas_features": null,
+        "columna_id_ref": "id_muestra",
+        "columna_id_query": "id_consulta"
+    },
+    "rutas": {
+        "data_dir": "data",
+        "output_dir": "outputs",
+        "csv_punto1": "data/punto1_muestras.csv",
+        "csv_punto2": "data/punto2_muestras.csv",
+        "csv_punto3_ref": "data/punto3_referencia.csv",
+        "csv_punto3_query": "data/punto3_consultas.csv",
+        "salida_p1_img": "outputs/punto1_clasificacion.png",
+        "salida_p1_csv": "outputs/punto1_resultados.csv",
+        "salida_p2_img": "outputs/punto2_bayes_regiones.png",
+        "salida_p2_csv": "outputs/punto2_resultados.csv",
+        "salida_p3_img": "outputs/punto3_vecinos_cercanos.png",
+        "salida_p3_csv": "outputs/punto3_resultados.csv"
+    }
+}
