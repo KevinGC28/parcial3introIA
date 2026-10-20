@@ -257,111 +257,117 @@ Esta ecuación describe un **elipsoide** en $\mathbb{R}^d$:
 
 ### 3.4. Análisis Matemático de las Clases del Taller
 
-Analicemos minuciosamente las tres clases proporcionadas en el enunciado:
+Para el cálculo analítico de los determinantes e inversas de matrices de covarianza de dimensión $2 \times 2$, empleamos la definición general del álgebra matricial:
+
+Dada una matriz general invertible de orden 2:
+
+$$
+\boldsymbol{A} = \begin{pmatrix} a & b \\ c & d \end{pmatrix}
+$$
+
+Su determinante y su matriz inversa vienen dados analíticamente por:
+
+$$
+\det(\boldsymbol{A}) = ad - bc
+$$
+
+$$
+\boldsymbol{A}^{-1} = \frac{1}{\det(\boldsymbol{A})} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}
+$$
+
+A continuación, aplicamos este procedimiento paso a paso a cada una de las 3 clases del taller:
+
+---
 
 #### **Clase 1:**
+
+**Parámetros dados:**
+
 $$
-\boldsymbol{\mu}_1 = \begin{pmatrix} 0 \\ 0 \end{pmatrix},
-\qquad
-\boldsymbol{\Sigma}_1 = \begin{pmatrix}
-1.0 & 0.5 \\
-0.5 & 1.0
-\end{pmatrix}
+\boldsymbol{\mu}_1 = \begin{pmatrix} 0 \\ 0 \end{pmatrix}, \qquad \boldsymbol{\Sigma}_1 = \begin{pmatrix} 1.0 & 0.5 \\ 0.5 & 1.0 \end{pmatrix}
 $$
 
-- **Determinante:**
+**1. Determinante:**
+
 $$
 \det(\boldsymbol{\Sigma}_1) = (1.0)(1.0) - (0.5)(0.5) = 1.0 - 0.25 = 0.75 = \frac{3}{4} > 0
 $$
 
-- **Fórmula de la Inversa $2 \times 2$:**
-Para cualquier matriz invertible $\boldsymbol{A} = \begin{pmatrix} a & b \\ c & d \end{pmatrix}$:
+**2. Matriz Inversa:**
+
+Aplicando la fórmula con $a=1.0$, $b=0.5$, $c=0.5$, $d=1.0$:
+
 $$
-\boldsymbol{A}^{-1} = \frac{1}{\det(\boldsymbol{A})} \begin{pmatrix}
-d & -b \\
--c & a
-\end{pmatrix}
+\boldsymbol{\Sigma}_1^{-1} = \frac{1}{\det(\boldsymbol{\Sigma}_1)} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}
 $$
 
-- **Inversa calculada para Clase 1:**
 $$
-\boldsymbol{\Sigma}_1^{-1} = \frac{1}{0.75} \begin{pmatrix}
-1.0 & -0.5 \\
--0.5 & 1.0
-\end{pmatrix}
-= \begin{pmatrix}
-\frac{4}{3} & -\frac{2}{3} \\
--\frac{2}{3} & \frac{4}{3}
-\end{pmatrix}
-\approx \begin{pmatrix}
-1.3333 & -0.6667 \\
--0.6667 & 1.3333
-\end{pmatrix}
+\boldsymbol{\Sigma}_1^{-1} = \frac{1}{0.75} \begin{pmatrix} 1.0 & -0.5 \\ -0.5 & 1.0 \end{pmatrix} = \begin{pmatrix} \frac{4}{3} & -\frac{2}{3} \\ -\frac{2}{3} & \frac{4}{3} \end{pmatrix} \approx \begin{pmatrix} 1.3333 & -0.6667 \\ -0.6667 & 1.3333 \end{pmatrix}
 $$
 
-- **Interpretación física:** Centrada en $(0, 0)$. Como $\sigma_{12} = 0.5 > 0$, las dos variables exhiben correlación positiva; la nube de puntos se expande a lo largo de la diagonal $x_2 \approx x_1$.
+**3. Interpretación física y geométrica:**
+
+Centrada en $(0, 0)$. Como $\sigma_{12} = 0.5 > 0$, las dos variables exhiben covarianza positiva; la nube de puntos se expande a lo largo de la diagonal principal ($x_2 \approx x_1$).
 
 ---
 
 #### **Clase 2:**
+
+**Parámetros dados:**
+
 $$
-\boldsymbol{\mu}_2 = \begin{pmatrix} 4 \\ 4 \end{pmatrix},
-\qquad
-\boldsymbol{\Sigma}_2 = \begin{pmatrix}
-1.0 & -0.3 \\
--0.3 & 1.0
-\end{pmatrix}
+\boldsymbol{\mu}_2 = \begin{pmatrix} 4 \\ 4 \end{pmatrix}, \qquad \boldsymbol{\Sigma}_2 = \begin{pmatrix} 1.0 & -0.3 \\ -0.3 & 1.0 \end{pmatrix}
 $$
 
-- **Determinante:**
+**1. Determinante:**
+
 $$
 \det(\boldsymbol{\Sigma}_2) = (1.0)(1.0) - (-0.3)(-0.3) = 1.0 - 0.09 = 0.91 = \frac{91}{100} > 0
 $$
 
-- **Inversa calculada para Clase 2:**
+**2. Matriz Inversa:**
+
+Aplicando la fórmula con $a=1.0$, $b=-0.3$, $c=-0.3$, $d=1.0$:
+
 $$
-\boldsymbol{\Sigma}_2^{-1} = \frac{1}{0.91} \begin{pmatrix}
-1.0 & 0.3 \\
-0.3 & 1.0
-\end{pmatrix}
-\approx \begin{pmatrix}
-1.0989 & 0.3297 \\
-0.3297 & 1.0989
-\end{pmatrix}
+\boldsymbol{\Sigma}_2^{-1} = \frac{1}{\det(\boldsymbol{\Sigma}_2)} \begin{pmatrix} d & -b \\ -c & a \end{pmatrix}
 $$
 
-- **Interpretación física:** Centrada en $(4, 4)$. Como $\sigma_{12} = -0.3 < 0$, las variables tienen correlación negativa moderada; la elipse se inclina con pendiente negativa.
+$$
+\boldsymbol{\Sigma}_2^{-1} = \frac{1}{0.91} \begin{pmatrix} 1.0 & 0.3 \\ 0.3 & 1.0 \end{pmatrix} \approx \begin{pmatrix} 1.0989 & 0.3297 \\ 0.3297 & 1.0989 \end{pmatrix}
+$$
+
+**3. Interpretación física y geométrica:**
+
+Centrada en $(4, 4)$. Como $\sigma_{12} = -0.3 < 0$, las variables tienen correlación negativa moderada; la elipse se inclina con pendiente negativa (a lo largo de la diagonal secundaria).
 
 ---
 
 #### **Clase 3:**
+
+**Parámetros dados:**
+
 $$
-\boldsymbol{\mu}_3 = \begin{pmatrix} -4 \\ 3 \end{pmatrix},
-\qquad
-\boldsymbol{\Sigma}_3 = \begin{pmatrix}
-0.5 & 0.0 \\
-0.0 & 2.0
-\end{pmatrix}
+\boldsymbol{\mu}_3 = \begin{pmatrix} -4 \\ 3 \end{pmatrix}, \qquad \boldsymbol{\Sigma}_3 = \begin{pmatrix} 0.5 & 0.0 \\ 0.0 & 2.0 \end{pmatrix}
 $$
 
-- **Determinante:**
+**1. Determinante:**
+
 $$
 \det(\boldsymbol{\Sigma}_3) = (0.5)(2.0) - (0.0)(0.0) = 1.0
 $$
 
-- **Inversa calculada para Clase 3:**
+**2. Matriz Inversa:**
+
+Dado que $\boldsymbol{\Sigma}_3$ es una matriz diagonal ($b = c = 0$), su inversa es simplemente la inversa de cada elemento de la diagonal:
+
 $$
-\boldsymbol{\Sigma}_3^{-1} = \begin{pmatrix}
-\frac{1}{0.5} & 0.0 \\
-0.0 & \frac{1}{2.0}
-\end{pmatrix}
-= \begin{pmatrix}
-2.0 & 0.0 \\
-0.0 & 0.5
-\end{pmatrix}
+\boldsymbol{\Sigma}_3^{-1} = \begin{pmatrix} \frac{1}{\sigma_1^2} & 0 \\ 0 & \frac{1}{\sigma_2^2} \end{pmatrix} = \begin{pmatrix} \frac{1}{0.5} & 0.0 \\ 0.0 & \frac{1}{2.0} \end{pmatrix} = \begin{pmatrix} 2.0 & 0.0 \\ 0.0 & 0.5 \end{pmatrix}
 $$
 
-- **Interpretación física:** Centrada en $(-4, 3)$. Al ser diagonal ($\sigma_{12} = 0$), las variables son independientes. La varianza vertical $\sigma_2^2 = 2.0$ es cuatro veces la varianza horizontal $\sigma_1^2 = 0.5$, produciendo una elipse elongada verticalmente.
+**3. Interpretación física y geométrica:**
+
+Centrada en $(-4, 3)$. Al ser diagonal ($\sigma_{12} = 0$), las variables son estadísticamente independientes. La varianza vertical $\sigma_2^2 = 2.0$ es cuatro veces la varianza horizontal $\sigma_1^2 = 0.5$, produciendo una elipse elongada verticalmente sobre el eje $x_2$.
 
 ---
 
